@@ -347,3 +347,93 @@ Caused by: org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany t
 	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:900)
 	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:240)
 	... 5 more
+30 6 2012 17:32:31,083 ERROR ~ 
+
+@6ap38mfg1
+Internal Server Error (500) for request GET /@tests?select=BasicTest.class
+
+Compilation error (In /app/models/Post.java around line 20)
+The file /app/models/Post.java could not be compiled. Error raised is : comments cannot be resolved or is not a field
+
+play.exceptions.CompilationException: comments cannot be resolved or is not a field
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:676)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:520)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:277)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:322)
+	at play.Play.detectChanges(Play.java:614)
+	at play.Invoker$Invocation.init(Invoker.java:198)
+	at Invocation.HTTP Request(Play!)
+30 6 2012 17:50:47,327 ERROR ~ 
+
+@6ap38mfg2
+Internal Server Error (500) for request GET /@tests/init
+
+Compilation error (In /test/BasicTest.java around line 110)
+The file /test/BasicTest.java could not be compiled. Error raised is : Comments cannot be resolved
+
+play.exceptions.CompilationException: Comments cannot be resolved
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:676)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:520)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:277)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:322)
+	at play.Play.detectChanges(Play.java:614)
+	at play.Invoker$Invocation.init(Invoker.java:198)
+	at Invocation.HTTP Request(Play!)
+30 6 2012 17:50:47,398 ERROR ~ 
+
+@6ap38mfg3
+Internal Server Error (500) for request GET /@tests/end?result=passed
+
+Compilation error (In /test/BasicTest.java around line 110)
+The file /test/BasicTest.java could not be compiled. Error raised is : Comments cannot be resolved
+
+play.exceptions.CompilationException: Comments cannot be resolved
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:676)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:520)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:277)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:322)
+	at play.Play.detectChanges(Play.java:614)
+	at play.Invoker$Invocation.init(Invoker.java:198)
+	at Invocation.HTTP Request(Play!)
+30 6 2012 17:50:47,441 ERROR ~ 
+
+@6ap38mfg4
+Internal Server Error (500) for request GET /@tests?select=BasicTest.class
+
+Compilation error (In /test/BasicTest.java around line 110)
+The file /test/BasicTest.java could not be compiled. Error raised is : Comments cannot be resolved
+
+play.exceptions.CompilationException: Comments cannot be resolved
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:676)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:520)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:277)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:322)
+	at play.Play.detectChanges(Play.java:614)
+	at play.Invoker$Invocation.init(Invoker.java:198)
+	at Invocation.HTTP Request(Play!)
+30 6 2012 17:51:20,867 ERROR ~ 
+
+@6ap38mfg5
+Internal Server Error (500) for request GET /@tests?select=BasicTest.class
+
+Compilation error (In /test/BasicTest.java around line 124)
+The file /test/BasicTest.java could not be compiled. Error raised is : Users cannot be resolved
+
+play.exceptions.CompilationException: Users cannot be resolved
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:676)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:520)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:277)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:322)
+	at play.Play.detectChanges(Play.java:614)
+	at play.Invoker$Invocation.init(Invoker.java:198)
+	at Invocation.HTTP Request(Play!)

@@ -64,7 +64,7 @@ public class BasicTest extends UnitTest {
     User bob = new User("bob@gmail.com", "secret", "Bob").save();
 
     // Create a new Post
-    Post bobPost = new Post(bob, "My first Post", "Hello world").save();
+    Post bobPost = new Post(bob, "My first post", "Hello world").save();
 
     // Post a first comment
     new Comment(bobPost, "Jeff", "Nice post").save();
@@ -79,13 +79,13 @@ public class BasicTest extends UnitTest {
     Comment firstComment = bobPostComments.get(0);
     assertNotNull(firstComment);
     assertEquals("Jeff", firstComment.author);
-    assertEquals("Nice Post", firstComment.content);
+    assertEquals("Nice post", firstComment.content);
     assertNotNull(firstComment.postedAt);
 
     Comment secondComment = bobPostComments.get(1);
     assertNotNull(secondComment);
-    assertEquals("Jeff", secondComment.author);
-    assertEquals("Nice Post", secondComment.content);
+    assertEquals("Tom", secondComment.author);
+    assertEquals("I knew that!", secondComment.content);
     assertNotNull(secondComment.postedAt);
   }
 
@@ -95,9 +95,34 @@ public class BasicTest extends UnitTest {
     User bob = new User("bob@gmail.com", "secret", "Bob").save();
 
     // Create a new Post
-    Post bobPost = new Post(bob, "My first Post", "Hello world").save();
+    Post bobPost = new Post(bob, "My first post", "Hello world").save();
 
     // Post a first comment
-    new Comment(bobPost, "Jeff", "Nice post").save();
+    bobPost.addComment("Jeff", "Nice post");
+    bobPost.addComment("Tom", "I knew that!");
+
+    // Retrieve all comments
+    List<Comment> bobPostComments = Comment.find("byPost", bobPost).fetch();
+
+    // Count things
+    assertEquals(1, User.count());
+    assertEquals(1, Post.count());
+    assertEquals(2, Comment.count());
+
+    // Retrieve Bob's post
+    bobPost = Post.find("byAuthor", bob).first();
+    assertNotNull(bobPost);
+
+    // Navigate to comments
+    assertEquals(2, bobPost.comments.size());
+    assertEquals("Jeff", bobPost.comments.get(0).author);
+
+    // Delete the post
+    bobPost.delete();
+
+    // Check that all comments have bean deleted
+    assertEquals(1, User.count());
+    assertEquals(0, Post.count());
+    assertEquals(0, Comment.count());
   }
 }

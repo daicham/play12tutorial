@@ -1,81 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<testsuite failures="0" time="0.033" errors="1" skipped="0" tests="3" name="BasicTest">
+<testsuite failures="0" time="0.051" errors="0" skipped="0" tests="5" name="BasicTest">
   <testcase classname="BasicTest" name="createandRetrieveUser" time="0.004">
       </testcase>
-  <testcase classname="BasicTest" name="tryConnectAsUser" time="0.007">
+  <testcase classname="BasicTest" name="tryConnectAsUser" time="0.005">
       </testcase>
-  <testcase classname="BasicTest" name="createPost" time="0.009">
+  <testcase classname="BasicTest" name="createPost" time="0.008">
       </testcase>
-  <testcase classname="BasicTest" name="postComments" time="0.013">
-                        <error type="" message="A java.lang.IllegalArgumentException has been caught, Not an entity:class models.Comment">
-        <![CDATA[
-          In /test/BasicTest.java, line 70
-          
-                  new Comment(bobPost, &quot;Jeff&quot;, &quot;Nice post&quot;).save(); :
-          
-        ]]>
-        </error>
-                  <system-err>
-            java.lang.IllegalArgumentException: Not an entity:class models.Comment
-	at org.hibernate.ejb.AbstractEntityManagerImpl.contains(AbstractEntityManagerImpl.java:757)
-	at play.db.jpa.JPABase._save(JPABase.java:24)
-	at play.db.jpa.GenericModel.save(GenericModel.java:203)
-	at BasicTest.postComments(BasicTest.java:70)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at play.test.PlayJUnitRunner$StartPlay$2$1.evaluate(PlayJUnitRunner.java:105)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
-	at play.test.PlayJUnitRunner.run(PlayJUnitRunner.java:55)
-	at org.junit.runners.Suite.runChild(Suite.java:128)
-	at org.junit.runners.Suite.runChild(Suite.java:24)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:136)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:117)
-	at play.test.TestEngine.run(TestEngine.java:112)
-	at controllers.TestRunner.run(TestRunner.java:66)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:548)
-	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:502)
-	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:478)
-	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:473)
-	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
-	at play.server.PlayHandler$NettyInvocation.execute(PlayHandler.java:257)
-	at play.Invoker$Invocation.run(Invoker.java:278)
-	at play.server.PlayHandler$NettyInvocation.run(PlayHandler.java:235)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at java.lang.Thread.run(Thread.java:680)
-
-          </system-err>  
-        }
-            </testcase>
+  <testcase classname="BasicTest" name="postComments" time="0.01">
+      </testcase>
+  <testcase classname="BasicTest" name="useTheCommentsRelation" time="0.024">
+      </testcase>
 </testsuite>
