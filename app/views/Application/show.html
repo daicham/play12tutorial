@@ -13,6 +13,11 @@
     </li>
   #{/if}
 </ul>
+
+#{if flash.success}
+  <p class="success">${flash.success}</p>
+#{/if}
+
 #{display post:post, as:'full'/}
 
 <h3>Post a comment</h3>
