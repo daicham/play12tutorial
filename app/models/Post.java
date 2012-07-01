@@ -63,5 +63,9 @@ public class Post extends Model {
       .bind("tags", tags)
       .bind("size", tags.length).fetch();
   }
+
+  public String toString() {
+    return title;
+  }
 }
 

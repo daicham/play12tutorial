@@ -21,5 +21,9 @@ public class User extends Model {
   public static User connect(String email, String password) {
     return find("byEmailAndPassword", email, password).first();
   }
+
+  public String toString() {
+    return email;
+  }
 }
 

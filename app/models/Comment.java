@@ -22,4 +22,8 @@ public class Comment extends Model {
     this.content = content;
     this.postedAt = new Date();
   }
+
+  public String toString() {
+    return post.title + " -> " + author;
+  }
 }

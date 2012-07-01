@@ -11,6 +11,8 @@ GET     /posts/{tags}                           Application.listTagged
 
 POST    /posts/{postId}/comments                Application.postComment
 
+*       /admin                                  module:crud
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
