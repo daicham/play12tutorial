@@ -1,5 +1,17 @@
 #{extends 'main.html'/}
 #{set title:post.title/}
 
+<ul class="pagenation">
+  #{if post.previous()}
+    <li id="previous">
+      <a href="@{Application.show(post.previous().id)}">${post.previous().title}</a>
+    </li>
+  #{/if}
+  #{if post.next()}
+    <li id="next">
+      <a href="@{Application.show(post.next().id)}">${post.next().title}</a>
+    </li>
+  #{/if}
+</ul>
 #{display post:post, as:'full'/}
 
