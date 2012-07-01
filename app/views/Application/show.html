@@ -15,3 +15,17 @@
 </ul>
 #{display post:post, as:'full'/}
 
+<h3>Post a comment</h3>
+
+#{form @Application.postComment(post.id)}
+  <p>
+    <label for="author">Your name: </label>
+    <input id="author" name="author" type="text" />
+  </p>
+  <p>
+    <label for="content">Your message: </label>
+    <textarea id="content" name="content"></textarea>
+  </p>
+  <p><input comment="" your="" type="submit" value="Submit your comment" /></p>
+#{/form}
+
