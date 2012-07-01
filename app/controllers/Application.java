@@ -36,4 +36,9 @@ public class Application extends Controller {
       flash.success("Thanks for posting %s", author);
       show(postId);
     }
+
+    public static void listTagged(String tag) {
+      List<Post> posts = Post.findTaggedWith(tag);
+      render(tag, posts);
+    }
 }
