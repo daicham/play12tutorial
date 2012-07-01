@@ -22,12 +22,12 @@
     </h3>
 
     #{list items:_post.comments, as:'comment'}
-      <div class="comments">
+      <div class="comment">
         <div class="comment-metadata">
           <span class="comment-author">by ${comment.author},</span>
-          <span class="coment-date">${comment.postedAt.format('dd MMM yy')}</span>
+          <span class="comment-date">${comment.postedAt.format('dd MMM yy')}</span>
         </div>
-        <div class="comment-conetent">
+        <div class="comment-content">
           <div class="about">Detail: </div>
           ${comment.content.escape().nl2br()}
         </div>
