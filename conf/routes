@@ -17,7 +17,9 @@ POST    /posts/{postId}/comments                Application.postComment
 // Administration
 GET     /admin?                                 Admin.index
 *       /admin                                  module:crud
+GET     /admin/myPost/{id}                      Admin.form
 GET     /admin/new                              Admin.form
+POST    /admin/myPost/{id}                      Admin.save
 POST    /admin/new                              Admin.save
 
 # Ignore favicon requests

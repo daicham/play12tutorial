@@ -5,7 +5,7 @@ ${posts.pluralize('post', 'posts')} so far</span></h3>
 
 #{list items:posts, as:'post'}
   <p class="post ${post_parity}">
-    <a href="#">${post.title}</a>
+    <a href="@{Admin.form(post.id)}">${post.title}</a>
   </p>
 #{/list}
 

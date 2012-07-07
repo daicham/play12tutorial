@@ -23,14 +23,28 @@ public class Admin extends Controller {
     render(posts);
   }
 
-  public static void form() {
+  public static void form(Long id) {
+    if (id != null) {
+      Post post = Post.findById(id);
+      render(post);
+    }
     render();
   }
 
-  public static void save(String title, String content, String tags) {
-    // Create Post
-    User user = User.find("byEmail", Security.connected()).first();
-    Post post = new Post(user, title, content);
+  public static void save(Long id, String title, String content, String tags) {
+    Post post;
+    if (id == null) {
+      // Create Post
+      User user = User.find("byEmail", Security.connected()).first();
+      post = new Post(user, title, content);
+    } else {
+      // Retrieve post
+      post = Post.findById(id);
+      // Edit
+      post.title = title;
+      post.content = content;
+      post.tags.clear();
+    }
     // Set tags list
     for (String tag : tags.split("\\s+")) {
       if (tag.trim().length() > 0) {
