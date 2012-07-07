@@ -22,4 +22,28 @@ public class Admin extends Controller {
     List<Post> posts = Post.find("author.email", user).fetch();
     render(posts);
   }
+
+  public static void form() {
+    render();
+  }
+
+  public static void save(String title, String content, String tags) {
+    // Create Post
+    User user = User.find("byEmail", Security.connected()).first();
+    Post post = new Post(user, title, content);
+    // Set tags list
+    for (String tag : tags.split("\\s+")) {
+      if (tag.trim().length() > 0) {
+        post.tags.add(Tag.findOrCreateByName(tag));
+      }
+    }
+    // Validate
+    validation.valid(post);
+    if (validation.hasErrors()) {
+      render("@form", post);
+    }
+    // Save
+    post.save();
+    index();
+  }
 }
