@@ -18,6 +18,8 @@ public class Admin extends Controller {
   }
 
   public static void index() {
-    render();
+    String user = Security.connected();
+    List<Post> posts = Post.find("author.email", user).fetch();
+    render(posts);
   }
 }
