@@ -14,6 +14,8 @@ GET     /posts/{tags}                           Application.listTagged
 
 POST    /posts/{postId}/comments                Application.postComment
 
+GET     /captcha                                Application.captcha
+
 // Administration
 GET     /admin?                                 Admin.index
 *       /admin                                  module:crud

@@ -1,6 +1,8 @@
 package controllers;
 
 import play.*;
+import play.cache.*;
+import play.libs.*;
 import play.mvc.*;
 import play.data.validation.*;
 
@@ -24,21 +26,38 @@ public class Application extends Controller {
 
     public static void show(Long id) {
       Post post = Post.findById(id);
-      render(post);
+      String randamID = Codec.UUID();
+      render(post, randamID);
     }
 
-    public static void postComment(Long postId, @Required String author, @Required String content) {
+    public static void postComment(
+        Long postId,
+        @Required(message="Author is required") String author,
+        @Required(message="A message is required") String content,
+        @Required(message="Please type the code") String code,
+        String randamID) {
       Post post = Post.findById(postId);
+      validation.equals(
+          code, Cache.get(randamID)
+      ).message("Invalid code. Please type it again");
       if (validation.hasErrors()){
-        render("Application/show.html", post);
+        render("Application/show.html", post, randamID);
       }
       post.addComment(author, content);
       flash.success("Thanks for posting %s", author);
+      Cache.delete(randamID);
       show(postId);
     }
 
     public static void listTagged(String tag) {
       List<Post> posts = Post.findTaggedWith(tag);
       render(tag, posts);
+    }
+
+    public static void captcha(String id) {
+      Images.Captcha captcha = Images.captcha();
+      String code = captcha.getText("#E4EAFD"); //captcha 文字列の色
+      Cache.set(id, code, "10mn");
+      renderBinary(captcha);
     }
 }
