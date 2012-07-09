@@ -37,9 +37,11 @@ public class Application extends Controller {
         @Required(message="Please type the code") String code,
         String randamID) {
       Post post = Post.findById(postId);
-      validation.equals(
-          code, Cache.get(randamID)
-      ).message("Invalid code. Please type it again");
+      if (!Play.id.equals("test")) {
+        validation.equals(
+            code, Cache.get(randamID)
+        ).message("Invalid code. Please type it again");
+      }
       if (validation.hasErrors()){
         render("Application/show.html", post, randamID);
       }

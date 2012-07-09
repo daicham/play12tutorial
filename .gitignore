@@ -4,4 +4,5 @@ lib
 test-result
 logs
 .*.swp
+cobertura.ser
 
